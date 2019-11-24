@@ -19,7 +19,7 @@ def addUsers():
         "occupation": request.json["occupation"]
     }
     users.append(user)
-    return jsonify({'user': user}), 201
+    return jsonify({"user": user}), 201
 
 if __name__ == '__main__':
     app.run(debug = True)

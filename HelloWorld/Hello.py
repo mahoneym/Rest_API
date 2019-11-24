@@ -9,7 +9,7 @@ users = []
 def index():
     return 'Hello, world!'
 
-@app.route('/api/v1.0/addUsers/', methods=['POST'])
+@app.route('/api/v1.0/addUsers', methods=['POST'])
 def addUsers():
     if not request.json or not 'name' in request.json:
         abort(400)

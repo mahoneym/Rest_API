@@ -25,7 +25,7 @@ def addUsers():                                             # the method called 
 def getUser():
     rightUser = NULL
     for user in users:
-        if user['name'] == name:
+        if user["name"] == name:
             return jsonify({'users': user})
 
 if __name__ == '__main__':                                  # the program starts here

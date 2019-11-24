@@ -23,7 +23,6 @@ def addUsers():                                             # the method called 
 
 @app.route('/api/v1.0/getUser/<string:name>', methods=['GET'])
 def getUser(name):
-    rightUser = NULL
     for user in users:
         if user["name"] == name:
             return jsonify({'users': user})

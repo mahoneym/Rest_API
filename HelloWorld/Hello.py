@@ -28,7 +28,7 @@ def getUser():
         if object['name'] == name:
             rightUser = users[index]
     if(rightUser != NULL):
-        return jsonify(('users': rightUser))
+        return jsonify({'users': rightUser})
 
 if __name__ == '__main__':                                  # the program starts here
     app.run(debug = True)                                   # run the app

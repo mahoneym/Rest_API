@@ -14,9 +14,9 @@ def addUsers():
     if not request.json: #or not 'name' in request.json:
         abort(400)
     user = {
-        'name':request.json['name'],
-        'age': request.json['age'],
-        'occupation': request.json['occupation']
+        "name":request.json["name"],
+        "age": request.json["age"],
+        "occupation": request.json["occupation"]
     }
     users.append(user)
     return jsonify({'user': user}), 201

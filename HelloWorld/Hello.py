@@ -11,7 +11,7 @@ def index():
 
 @app.route('/api/v1.0/addUsers', methods=['POST'])
 def addUsers():
-    if not request.json or not 'name' in request.json:
+    if not request.json: #or not 'name' in request.json:
         abort(400)
     user = {
         'name':request.json['name'],

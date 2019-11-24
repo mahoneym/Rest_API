@@ -27,7 +27,7 @@ def getUser(name):                                          # the method called 
         if user["name"] == name:                            # check if the current user is the one I am looking for
             return jsonify({'users': user})                 # return the user if I have found it
 
-@app.route('api/v1.0/getAllUsers', methods=['GET'])
+@app.route('/api/v1.0/getAllUsers', methods=['GET'])
 def getAllUsers():
     return jsonify({'users': users})
 

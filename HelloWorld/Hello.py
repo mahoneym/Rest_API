@@ -22,10 +22,10 @@ def addUsers():                                             # the method called 
     return jsonify({"user": user}), 201                     # return the user in JSON and a success code
 
 @app.route('/api/v1.0/getUser/<string:name>', methods=['GET'])
-def getUser():
+def getUser(userName):
     rightUser = NULL
     for user in users:
-        if user["name"] == name:
+        if user["name"] == userName:
             return jsonify({'users': user})
 
 if __name__ == '__main__':                                  # the program starts here

@@ -11,4 +11,4 @@ When the command is successful, the terminal will show a HTTP/1.0 201 response. 
 
 After the user has been added, you can get the information for a single user by running:
   'curl -i http://127.0.0.1/api/v1.0/getUser/Test'
-When this command is sucessful, there will be a 200 response and the user whose name was requested will be printed. I have included screenshots of my terminals when I successfully ran the program.
+When this command is sucessful, there will be a HTTP/1.0 200 response and the user whose name was requested will be printed. I have included screenshots of my terminals when I successfully ran the program.

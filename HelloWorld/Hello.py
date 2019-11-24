@@ -15,7 +15,7 @@ def addUsers():
         abort(400)
     user = {
         'name':request.json['name'],
-        'age': request.json['age'].
+        'age': request.json['age'],
         'occupation': request.json['occupation']
     }
     users.append(user)

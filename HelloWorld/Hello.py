@@ -24,11 +24,9 @@ def addUsers():                                             # the method called 
 @app.route('/api/v1.0/getUser/<string:name>', methods=['GET'])
 def getUser():
     rightUser = NULL
-    for index, object in enumerate(users):
-        if object['name'] == name:
-            rightUser = users[index]
-    if(rightUser != NULL):
-        return jsonify({'users': rightUser})
+    for user in users:
+        if user['name'] == name:
+            return jsonify({'users': user})
 
 if __name__ == '__main__':                                  # the program starts here
     app.run(debug = True)                                   # run the app

@@ -20,12 +20,12 @@ def addUsers():                                             # the method called 
             "age": request.json["age"],                         # get the age from the request
             "occupation": request.json["occupation"]            # get the occupation from the request
         }
-    if 'age' in request.json:
+    if 'age' in request.json and not 'occupation' in request.json:
         user = {                                                # create a user
             "name":request.json["name"],                        # get the name from the request
             "age": request.json["age"]                          # get the age from the request
         }
-    if 'occupation' in request.json:
+    if 'occupation' in request.json and not 'age' in request.json:
         user = {                                                # create a user
             "name":request.json["name"],                        # get the name from the request
             "occupation": request.json["occupation"]            # get the occupation from the request

@@ -31,7 +31,7 @@ def addUsers():                                             # the method called 
             "occupation": request.json["occupation"]            # get the occupation from the request
         }
     if not 'occupation' in request.json and not 'age' in request.json:
-        user {
+        user = {
             "name": request.json["name"]
         }
     users.append(user)                                      # put the user in the list

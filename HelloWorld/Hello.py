@@ -14,11 +14,22 @@ def index():
 def addUsers():                                             # the method called when going to the address above
     if not request.json or not 'name' in request.json:
         abort(400)                                          # error has occurred: ABORT
-    user = {                                                # create a user
-        "name":request.json["name"],                        # get the name from the request
-        "age": request.json["age"],                         # get the age from the request
-        "occupation": request.json["occupation"]            # get the occupation from the request
-    }
+    if 'occupation' in request.json and 'age' in request.json:
+        user = {                                                # create a user
+            "name":request.json["name"],                        # get the name from the request
+            "age": request.json["age"],                         # get the age from the request
+            "occupation": request.json["occupation"]            # get the occupation from the request
+        }
+    if 'age' in request.json:
+        user = {                                                # create a user
+            "name":request.json["name"],                        # get the name from the request
+            "age": request.json["age"]                          # get the age from the request
+        }
+    if 'occupation' in request.json:
+        user = {                                                # create a user
+            "name":request.json["name"],                        # get the name from the request
+            "occupation": request.json["occupation"]            # get the occupation from the request
+        }
     users.append(user)                                      # put the user in the list
     return jsonify({"user": user}), 201                     # return the user in JSON and a Created success code
 

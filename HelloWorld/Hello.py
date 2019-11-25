@@ -12,8 +12,8 @@ def index():
 
 @app.route('/api/v1.0/addUsers', methods=['POST'])          # where to go when going to 127.0.0.1:5000/api/v1.0/addUsers
 def addUsers():                                             # the method called when going to the address above
-    if not request.json or not 'name' in request.json:
-        abort(400)                                          # error has occurred: ABORT
+    if not request.json or not 'name' in request.json:      # if the request isn't in JSON or doesn't have a name
+        abort(400)                                          # error has occurred: ABORT and send 400 code
     if 'occupation' in request.json and 'age' in request.json:
         user = {                                                # create a user
             "name":request.json["name"],                        # get the name from the request

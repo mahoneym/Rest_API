@@ -8,7 +8,7 @@ The project can be run by navigating into the HelloWorld file. The test webpage 
 
 To use the API functionality, run 'python Hello.py' in a terminal window. Open another terminal window and run the command:
   'curl -i -H "Content-Type: application/json" -X POST -d '{"name":"Test","age":"100","occupation":"programmer"}' http://127.0.0.1/api/v1.0/addUsers'
- to add a user. When the command is successful, the terminal will show a HTTP/1.0 201 response. Note: using the wrong quotation marks will cause parse errors in the program and will cause the program to fail.
+ to add a user. A user must have a name in order to be added, and, if it is not included, a 400 response will be received. Occupation and age are both optional, and users can be added with or without those fields. When the command is successful, the terminal will show a HTTP/1.0 201 response. Note: using the wrong quotation marks will cause parse errors in the program and will cause the program to fail.
 
 After the user has been added, you can get the information for a single user by running:
   'curl -i http://127.0.0.1/api/v1.0/getUser/Test'

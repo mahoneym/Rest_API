@@ -1,5 +1,6 @@
 # Rest_API
-Project 4 for Networking
+Maggie Mahoney
+Project 4 
 
 This project implements a Rest API POST method using Python2 and Flask. I developed the program on a Kali Linux VirtualBox, so all commands shown below are for a Linux terminal. I used a virtual environment called HelloWorld.
 

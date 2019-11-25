@@ -8,7 +8,7 @@ users = []                        # the place in memory to store the users inste
 
 @app.route('/')                   # where to go when going to 127.0.0.1:5000/
 def index():
-    return 'Hello, world!'        # prints Hello, world! to the screen
+    return 'Hello, world!'        # prints Hello, world! to the screen at the URL above
 
 @app.route('/api/v1.0/addUsers', methods=['POST'])              # where to go when going to 127.0.0.1:5000/api/v1.0/addUsers
 def addUsers():                                                 # the method called when going to the address above

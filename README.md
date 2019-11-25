@@ -11,4 +11,8 @@ When the command is successful, the terminal will show a HTTP/1.0 201 response. 
 
 After the user has been added, you can get the information for a single user by running:
   'curl -i http://127.0.0.1/api/v1.0/getUser/Test'
-When this command is sucessful, there will be a 200 response and the user whose name was requested will be printed. I have included screenshots of my terminals when I successfully ran the program.
+When this command is successful, there will be a 200 response and the user whose name was requested will be printed.
+
+Finally, the API has a functionality for listing out all the users. This can be recreated by creating multiple users using the step from above then using the command
+      'curl -i http://127.0.0.1:5000/api/v1.0/getAllUsers'
+This command should return a HTTP/1.0 200 OK response and print all the users which have been added to the list in memory. I have included screenshots of my terminals when I successfully ran the program.

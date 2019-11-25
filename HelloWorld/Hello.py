@@ -19,17 +19,17 @@ def addUsers():                                             # the method called 
         "occupation": request.json["occupation"]            # get the occupation from the request
     }
     users.append(user)                                      # put the user in the list
-    return jsonify({"user": user}), 201                     # return the user in JSON and a success code
+    return jsonify({"user": user}), 201                     # return the user in JSON and a Created success code
 
 @app.route('/api/v1.0/getUser/<string:name>', methods=['GET'])      # going to http://127.0.0.1:5000/api/v1.0/getUser/<name>
 def getUser(name):                                          # the method called when going to the URL above
     for user in users:                                      # go through each user in the list
         if user["name"] == name:                            # check if the current user is the one I am looking for
-            return jsonify({'users': user})                 # return the user if I have found it
+            return jsonify({'users': user})                 # return the user as a JSON object if I have found it
 
-@app.route('/api/v1.0/getAllUsers', methods=['GET'])
-def getAllUsers():
-    return jsonify({'users': users})
+@app.route('/api/v1.0/getAllUsers', methods=['GET'])        # use the get request when accessing http://127.0.0.1:5000/api/v1.0/getAllUsers
+def getAllUsers():                                          # the method called when accessing the url above
+    return jsonify({'users': users})                        # return the list of user as a JSON object
 
 if __name__ == '__main__':                                  # the program starts here
     app.run(debug = True)                                   # run the app

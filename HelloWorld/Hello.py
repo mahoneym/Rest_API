@@ -14,24 +14,23 @@ def index():
 def addUsers():                                                 # the method called when going to the address above
     if not request.json or not 'name' in request.json:          # if the request isn't in JSON or doesn't have a name
         abort(400)                                              # error has occurred: ABORT and send 400 code
-    elif 'occupation' in request.json and 'age' in request.json:
+    elif 'occupation' in request.json and 'age' in request.json:        # if the request has age and occupation
         user = {                                                # create a user
             "name":request.json["name"],                        # get the name from the request
             "age": request.json["age"],                         # get the age from the request
             "occupation": request.json["occupation"]            # get the occupation from the request
         }
-    elif 'age' in request.json and not 'occupation' in request.json:
+    elif 'age' in request.json and not 'occupation' in request.json:    # if the request has age and not occupation
         user = {                                                # create a user
             "name":request.json["name"],                        # get the name from the request
             "age": request.json["age"]                          # get the age from the request
         }
-    elif 'occupation' in request.json and not 'age' in request.json:
+    elif 'occupation' in request.json and not 'age' in request.json:    # if the request has occupation and not age
         user = {                                                # create a user
             "name":request.json["name"],                        # get the name from the request
             "occupation": request.json["occupation"]            # get the occupation from the request
         }
-    #if not 'occupation' in request.json and not 'age' in request.json:
-    else:
+    else:                                                               # otherwise, the request only has the name
         user = {
             "name": request.json["name"]
         }

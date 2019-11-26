@@ -41,7 +41,7 @@ def addUsers():                                                 # the method cal
 def getUser(name):                                                  # the method called when going to the URL above
     for user in users:                                              # go through each user in the list
         if user["name"] == name:                                    # check if the current user is the one I am looking for
-            return jsonify({'users': user})                         # return the user as a JSON object if I have found it
+            return jsonify({'user': user})                         # return the user as a JSON object if I have found it
     return jsonify("User Not Found"), 404                           # the user wasn't found- return a 404 and not found message
 
 @app.route('/api/v1.0/getAllUsers', methods=['GET'])        # use the get request when accessing http://127.0.0.1:5000/api/v1.0/getAllUsers

@@ -31,8 +31,8 @@ def addUsers():                                                         # the me
             "occupation": request.json["occupation"]                    # get the occupation from the request
         }
     else:                                                               # otherwise, the request only has the name
-        user = {
-            "name": request.json["name"]
+        user = {                                                        # create a user
+            "name": request.json["name"]                                # get the name from the request
         }
     users.append(user)                                              # put the user in the list
     return jsonify({"user": user}), 201                             # return the user in JSON and a Created success code
